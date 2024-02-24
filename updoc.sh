@@ -8,11 +8,11 @@ echo "${GREEN}Генерация документации...${NC}"
 xcodebuild docbuild -scheme SlothCreator -destination 'name=iPhone 14 Pro' -derivedDataPath ./build > /dev/null
 
 echo "${GREEN}Установка...${NC}"
-if [ ! -d "./doc" ]; then
-  mkdir -p "./doc"
+if [ ! -d "./docs" ]; then
+  mkdir -p "./docs"
 fi
 
-cp -r "./build/Build/Products/Debug/SlothCreator.doccarchive" "./doc" > /dev/null
+cp -r "./build/Build/Products/Debug/SlothCreator.doccarchive" "./docs" > /dev/null
 
 echo "${RED}Удаление не нужных папок...${NC}"
 rm -r ./.build  > /dev/null
